@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Cp1 from "./cp1/cp1";
+import Cp2 from "./cp2/cp2";
+import Cp3 from "./cp3/cp3";
+import Cp4 from "./cp4/cp4";
+import Cp5 from "./cp5/cp5";
+import { URL, genQuery, loading } from "./probConstants";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(count + 1);
+    console.log(count);
+    // setCount(count + 1);
+    // console.log(count + URL);
+    console.log(URL);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cp1 />
+      <Cp2 />
+      <Cp3 />
+      <Cp4 />
+      <Cp5 />
     </div>
   );
 }
